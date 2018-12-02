@@ -1,0 +1,73 @@
+% !TEX encoding = UTF-8 Unicode
+% -*- coding: UTF-8; -*-
+% vim: set fenc=utf-8
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% simpleresponsecorrections.sty
+%% <https://github.com/zachscrivena/simple-response-corrections>
+%% This is free and unencumbered software released into the
+%% public domain; see <http://unlicense.org> for details.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\NeedsTeXFormat{LaTeX2e}
+
+\ProvidesPackage{simpleresponsecorrections}[2018/12/02 Simple Response Corrections https://github.com/zachscrivena/simple-response-corrections]
+
+\ProcessOptions\relax
+
+% Framed text.
+\RequirePackage[tikz]{mdframed}
+
+% For $\Box$ symbol.
+\RequirePackage{amssymb}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Define an "mdframed" environment.
+% args=(#1:envname,#2:label,#3:strokecolor,#4:fillcolor,#5:labelcolor).
+% See documentation: https://www.ctan.org/pkg/mdframed
+\newcommand{\DefineLabeledFrame}[5]{
+	\mdfdefinestyle{mdfstyle#1}{
+		leftmargin=0pt,
+		rightmargin=0pt,
+		innerleftmargin=4pt,
+		innerrightmargin=4pt,
+		roundcorner=2pt,
+		middlelinecolor=#3,
+		middlelinewidth=1pt,
+		frametitlerule=false,
+		backgroundcolor=#4,
+		frametitle={#2},
+		frametitlefont={\sffamily\tiny\bfseries\color{#5}},
+		frametitlebackgroundcolor=#3,
+		frametitleaboveskip=2pt,
+		frametitlebelowskip=2pt,
+	}
+	\newmdenv[style=mdfstyle#1]{#1}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Macro: CheckBoxItem
+\newsavebox{\CheckBoxItemIndentBox}
+\newlength{\CheckBoxItemIndentWidth}
+%
+\newenvironment{CheckBoxItem}[1]{%
+	\par%
+	\savebox{\CheckBoxItemIndentBox}{\hspace{0.4em}$\Box$\hspace{0.4em}}%
+	\settowidth{\CheckBoxItemIndentWidth}{\usebox{\CheckBoxItemIndentBox}}%
+	\parshape 2
+	0pt \linewidth%
+	\CheckBoxItemIndentWidth \dimexpr\linewidth-\CheckBoxItemIndentWidth\relax%
+	\noindent%
+	\usebox{\CheckBoxItemIndentBox}%
+	\textbf{#1}\hspace{0.4em}%
+	\ignorespaces%
+}{%
+	\ignorespaces%
+	\vspace{0.5em}%
+	\par%
+}
+
+% End of package file.
+\endinput

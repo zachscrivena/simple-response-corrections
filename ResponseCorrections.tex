@@ -1,0 +1,157 @@
+% !TEX encoding = UTF-8 Unicode
+% -*- coding: UTF-8; -*-
+% vim: set fenc=utf-8
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ResponseCorrections.tex
+%% <https://github.com/zachscrivena/simple-response-corrections>
+%% This is free and unencumbered software released into the
+%% public domain; see <http://unlicense.org> for details.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% See "README.md" for instructions on compiling this document.
+
+\documentclass[letterpaper,10pt,twocolumn]{article}
+% Other options: a4paper, letterpaper, onecolumn, twocolumn.
+
+\nonstopmode % do not stop on errors
+\sloppy % to avoid overfull lines
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% PREAMBLE.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{simpleresponsecorrections}
+
+% Define "mdframed" environments.
+% args=(#1:envname,#2:label,#3:strokecolor,#4:fillcolor,#5:labelcolor).
+\DefineLabeledFrame{Reviewer1}{REVIEWER 1}{red!70!black}{red!5!white}{white}
+\DefineLabeledFrame{Reviewer2}{REVIEWER 2}{red!70!black}{red!5!white}{white}
+\DefineLabeledFrame{PreviousVersion}{PREVIOUS VERSION}{black!80!white}{black!5!white}{white}
+\DefineLabeledFrame{RevisedVersion}{REVISED VERSION}{blue!80!black}{blue!5!white}{white}
+% Define more environments as needed.
+
+% Use Times typeface.
+\usepackage{times}
+
+% Sample text.
+\usepackage{lipsum}
+
+% Slightly increased line spacing.
+\linespread{1.05}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ACTUAL DOCUMENT.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\pagestyle{plain}
+\pagenumbering{arabic}
+
+\title{Response to Reviewers on\\
+``Insert Paper Title Here''}
+\author{Insert Author Names Here}
+\date{\normalsize
+Submitted 1 Jan 2016,
+Reviewed 2 Feb 2017,
+Revised 3 Mar 2018\\
+Insert Manuscript ID Here}
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Overview}
+
+We thank the associate editor and the three reviewers for their careful reading of our manuscript and detailed recommendations for improvements.
+
+Several parts of the paper have been revised accordingly to clarify the concepts behind the main results.
+\lipsum[1]
+
+In the following three sections, we address individual comments from each reviewer and describe the corresponding changes to the manuscript.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Detailed Response to Reviewer 1}
+
+\subsection{Comment 1 on Related Work}
+
+\begin{Reviewer1}
+This is the comment made by the reviewer, reproduced in full for ease of reference.
+\lipsum[2]
+\end{Reviewer1}
+
+To address the deficiencies in the description of related work, we have expanded the corresponding paragraphs in Section~1.2 and added several new citations:
+
+\begin{RevisedVersion}
+\lipsum[5]
+\end{RevisedVersion}
+
+\subsection{Comment 2 on Theorem 1}
+
+\begin{Reviewer1}
+This is the comment made by the reviewer, reproduced in full for ease of reference.
+\lipsum[3]
+\end{Reviewer1}
+
+We have clarified the interpretation of Theorem~1 in Section~2.4 by replacing the old paragraph
+
+\begin{PreviousVersion}
+\lipsum[1]
+\end{PreviousVersion}
+
+\noindent
+with the following new paragraph:
+
+\begin{RevisedVersion}
+\lipsum[2]
+\end{RevisedVersion}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Detailed Response to Reviewer 2}
+
+\subsection{Comment 1}
+
+\begin{Reviewer2}
+This is the comment made by the reviewer, reproduced in full for ease of reference.
+\lipsum[6]
+\end{Reviewer2}
+
+\lipsum[7]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Corrections to Galley Proof v2}
+
+\begin{CheckBoxItem}
+{Pg 1, Col 1, Para 3: Typo.}
+Replace ``affect'' with ``effect''.
+\end{CheckBoxItem}
+
+\begin{CheckBoxItem}
+{Pg 1, Col 2, Para 1: Punctuation.}
+Insert a comma before ``which'' in the first sentence, and a period at the end of the third sentence.
+\end{CheckBoxItem}
+
+\begin{CheckBoxItem}
+{Pg 2, Col 1, Para 5: Extraneous space.}
+Replace ``every day'' with ``everyday''.
+\end{CheckBoxItem}
+
+\begin{CheckBoxItem}
+{Pg 2, Col 2, Para 3: Duplicate text.}
+Remove duplicated words ``special case''.
+\end{CheckBoxItem}
+
+\begin{CheckBoxItem}
+{Pg 4, Col 2, Para 4: Erroneous math expression.}
+Replace $xy$ with $x-y$, and $ab^c$ with $a^{bc}$.
+\end{CheckBoxItem}
+
+\begin{CheckBoxItem}
+{Pg 6, Col 1, Fig 2: Erroneous caption.}
+Swap the captions for subfigures (a) and (c).
+\end{CheckBoxItem}
+
+\end{document}
