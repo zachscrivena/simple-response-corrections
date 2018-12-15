@@ -6,7 +6,7 @@ Template for a simple response and list of corrections, to editors or reviewers,
 https://github.com/zachscrivena/simple-response-corrections
 
 **Lead author:**<br>
-Zach Scrivena (https://github.com/zachscrivena/)
+Zach Scrivena
 
 **Compiled sample document:**<br>
 [ResponseCorrections.pdf](https://raw.githubusercontent.com/zachscrivena/simple-response-corrections/master/ResponseCorrections.pdf)
